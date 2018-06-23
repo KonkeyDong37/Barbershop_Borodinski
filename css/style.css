@@ -895,7 +895,7 @@ a:focus {
 }
 
 .modal {
-  display: block;
+  display: none;
 
   position: fixed;
   color: #000000;
@@ -908,11 +908,28 @@ a:focus {
 }
 
 .modal-login {
-  top: 120px;
+  top: 40%;
   left: 50%;
   width: 300px;
-  margin-left: -230px;
+  transform: translate(-50%, -60%);
   padding: 50px 80px;
+}
+
+@keyframes bounce-login {
+  0%   { transform: translate(-50%, -2000px); }
+  37%  { transform: translate(-50%, -60%); }
+  55%  { transform: translate(-50%, -73%); }
+  73%  { transform: translate(-50%, -60%); }
+  82%  { transform: translate(-50%, -64%); }
+  91%  { transform: translate(-50%, -60%); }
+  96%  { transform: translate(-50%, -61%);}
+  100% { transform: translate(-50%, -60%); }
+}
+
+.js-modal-login-show {
+  display: block;
+  animation-name: bounce-login;
+  animation-duration: 0.7s;
 }
 
 .modal-login h2 {
@@ -1037,6 +1054,23 @@ a:focus {
   width: 766px;
   height: 560px;
   border: 7px solid #ffffff;
+}
+
+@keyframes bounce-map {
+  0%   { transform: translate(-50%, 2000px); }
+  37%  { transform: translate(-50%, -50%); }
+  55%  { transform: translate(-50%, -37%); }
+  73%  { transform: translate(-50%, -50%); }
+  82%  { transform: translate(-50%, -46%); }
+  91%  { transform: translate(-50%, -50%); }
+  96%  { transform: translate(-50%, -49%);}
+  100% { transform: translate(-50%, -50%); }
+}
+
+.js-modal-map-show {
+display: block;
+animation-name: bounce-map;
+animation-duration: 0.7s;
 }
 
 .modal-map p {
