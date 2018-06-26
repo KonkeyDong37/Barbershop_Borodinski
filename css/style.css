@@ -219,7 +219,7 @@ a:focus {
   margin: 0;
   font-size: 30px;
   line-height: 42px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .breadcrumbs {
@@ -476,69 +476,95 @@ a:focus {
   margin: 0;
   padding: 0;
   border: none;
-  margin-bottom: 54px;
+  margin-bottom: 30px;
 }
 
 .filters legend {
   font-size: 24px;
   line-height: 30px;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .filters ul {
+  max-width: 170px;
   margin: 0;
   padding: 0;
   line-height: 18px;
   list-style: none;
-  padding-left: 43px;
 }
 
-.filters li {
-  margin-bottom: 20px;
-}
-
-/* .filter-option {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 15px 0;
-}
-
-
-.filter-checkbox {
-  position: relative;
-  padding-left: 30px;
+.filter-option {
+  padding-left: 40px;
+  margin-bottom: 19px;
   cursor: pointer;
 }
 
-.filter-checkbox:hover,
-.filter-checkbox:focus {
+.filter-checkbox,
+.filter-radio {
+  position: relative;
+  cursor: pointer;
+}
+
+.filter-checkbox-text:hover,
+.filter-checkbox-text:focus,
+.filter-radio-text:hover,
+.filter-radio-text:focus {
   color: #663d15;
 }
 
-.filter-checkbox input[type="checkbox"] + .filter-checkbox-indicator {
+.filter-input-checkbox ~ .filter-checkbox-indicator {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -2px;
+  left: -40px;
   width: 17px;
   height: 17px;
   border: 2px solid #000000;
 }
 
-.filter-checkbox input[type="checkbox"]:focus + .filter-checkbox-indicator {
-  border-color: #663d15;
-  /* outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color; */
-} */
-
-.filter-input:hover + label,
-.filter-input:focus + label {
-  color: #663d15;
+.filter-input-checkbox:checked ~ .filter-checkbox-indicator::before,
+.filter-input-checkbox:checked ~ .filter-checkbox-indicator::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 1px;
+  width: 15px;
+  height: 3px;
+  transform: rotate(45deg);
+  background-color: #000000;
 }
 
-.filter-input:disabled + label {
+.filter-input-checkbox:checked ~ .filter-checkbox-indicator::after {
+  transform: rotate(-45deg);
+}
+
+.filter-input:disabled + .filter-checkbox-indicator,
+.filter-input:disabled ~ .filter-checkbox-text,
+.filter-input:disabled + .filter-radio-indicator,
+.filter-input:disabled ~ .filter-radio-text {
   color: #000000;
   opacity: 0.5;
+  cursor: default;
+}
+
+.filter-input-radio ~ .filter-radio-indicator {
+  position: absolute;
+  top: -1px;
+  left: -40px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #000000;
+  border-radius: 50%;
+}
+
+.filter-input-radio:checked ~ .filter-radio-indicator::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  background-color: #000000;
+  border-radius: 50%;
 }
 
 .catalog {
@@ -551,7 +577,7 @@ a:focus {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  margin-bottom: 25px;
+  margin-bottom: 27px;
 }
 
 .catalog-item {
@@ -623,7 +649,6 @@ a:focus {
   width: 109px;
   padding: 10px 0;
   font-size: 14px;
-  line-height: 20px;
   text-align: center;
   background-color: #e5e5e5;
   margin-left: 15px;
@@ -817,6 +842,10 @@ a:focus {
   background-image: url("../background/pattern-dark.jpg");
   background-position: 0 0;
   background-repeat: repeat;
+}
+
+.inner-page .main-footer {
+  margin-top: 50px;
 }
 
 .main-footer .container {
